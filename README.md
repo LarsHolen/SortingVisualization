@@ -6,3 +6,4 @@ may have some errors, but they all do the job :P
 
 ## Sorting algorithms so far:
 Bubblesort, selectionsort, insertsort and quicksort.
+Added a homemade sort, Mysort.
