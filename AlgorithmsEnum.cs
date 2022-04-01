@@ -13,6 +13,7 @@ namespace SortingVisualization
         SelectionSort,
         DoubleSelectionSort,
         InsertionSort,
-        QuickSort
+        QuickSort,
+        MySort
     } 
 }

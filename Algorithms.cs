@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 
@@ -39,6 +40,8 @@ namespace SortingVisualization
                 }
                 n--;  
             }
+            // Sleeping a little, so we finish drawing it
+            Thread.Sleep(500);
             SortFinished.Invoke(null, EventArgs.Empty);
         }
 
@@ -66,6 +69,8 @@ namespace SortingVisualization
                 }
                 (intArray[smallestIndex], intArray[i]) = (intArray[i], intArray[smallestIndex]);
             }
+            // Sleeping a little, so we finish drawing it
+            Thread.Sleep(500);
             SortFinished.Invoke(null, EventArgs.Empty);
         }
         
@@ -88,10 +93,13 @@ namespace SortingVisualization
                 while (j >= 0 && intArray[j] > current)
                 {
                     if (CancelCheck(ct)) return;
-                    (intArray[j + 1], intArray[j]) = (intArray[j], intArray[j + 1]);
+                    intArray[j + 1] = intArray[j];
                     j--;
                 }
+                intArray[j + 1] = current;
             }
+            // Sleeping a little, so we finish drawing it
+            Thread.Sleep(500);
             SortFinished.Invoke(null, EventArgs.Empty);
         }
 
@@ -102,7 +110,7 @@ namespace SortingVisualization
         /// <param name="left"></param>
         /// <param name="right"></param>
 
-        public static void QuickSort(int[] data, int l, int r, int sleep, CancellationToken ct)
+        internal static void QuickSort(int[] data, int l, int r, int sleep, CancellationToken ct)
         {
             int i, j;
             int x;
@@ -114,6 +122,7 @@ namespace SortingVisualization
             while (true)
             {
                 Thread.Sleep(sleep);
+                if (CancelCheck(ct)) return;
                 while (data[i] < x)
                     i++;
                 while (x < data[j])
@@ -131,10 +140,64 @@ namespace SortingVisualization
                 QuickSort(data, l, j, sleep, ct);
             if (i < r)
                 QuickSort(data, i, r, sleep, ct);
-            if (l == 0 && r == data.Length - 1) SortFinished.Invoke(null, EventArgs.Empty);
+            if (l == 0 && r == data.Length - 1)
+            {
+                // Sleeping a little, so we finish drawing it
+                Thread.Sleep(500);
+                SortFinished.Invoke(null, EventArgs.Empty);
+            }
         }
 
-       
+
+        internal static void MySort(int[] intArray, int sleep, CancellationToken ct)
+        {
+            Dictionary<int, int> sortDict = new();
+            int max = intArray[0];
+            int min = intArray[0];
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                if (CancelCheck(ct)) return;
+                if (max < intArray[i]) max = intArray[i];
+                if (min > intArray[i]) min = intArray[i];
+
+                if(sortDict.ContainsKey(intArray[i]))
+                {
+                    sortDict[intArray[i]]++;
+                } else
+                {
+                    sortDict.Add(intArray[i], 1);
+                }
+                
+            }
+            int index = 0;
+            for (int i = min; i < max+1; i++)
+            {
+                if (CancelCheck(ct)) return;
+                if (sortDict.ContainsKey(i))
+                {
+                    Thread.Sleep(sleep);
+                    if (sortDict[i] > 1)
+                    {
+                        // Dict have value above 1, meaning there where multiple
+                        // elements with this key. Loop it an fill the array.
+                        for (int j = 0; j < sortDict[i]; j++)
+                        {
+                            
+                            intArray[index] = i;
+                            index++;
+                        }
+                    } else
+                    {
+                        // only one element with this key
+                        intArray[index] = i;
+                        index++;
+                    }
+                }
+            }
+            // Sleeping a little, so we finish drawing it
+            Thread.Sleep(500);
+            SortFinished.Invoke(null, EventArgs.Empty);
+        }
 
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace SortingVisualization
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.ButtonMySort = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
@@ -166,6 +167,16 @@ namespace SortingVisualization
             this.radioButton2.UseVisualStyleBackColor = true;
             this.radioButton2.Click += new System.EventHandler(this.RadioButtonDrawPoints_Click);
             // 
+            // ButtonMySort
+            // 
+            this.ButtonMySort.Location = new System.Drawing.Point(12, 126);
+            this.ButtonMySort.Name = "ButtonMySort";
+            this.ButtonMySort.Size = new System.Drawing.Size(134, 23);
+            this.ButtonMySort.TabIndex = 1;
+            this.ButtonMySort.Text = "MySort";
+            this.ButtonMySort.UseVisualStyleBackColor = true;
+            this.ButtonMySort.Click += new System.EventHandler(this.ButtonMySort_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -178,6 +189,7 @@ namespace SortingVisualization
             this.Controls.Add(this.ButtonSlower);
             this.Controls.Add(this.ButtonReset);
             this.Controls.Add(this.ButtonFast);
+            this.Controls.Add(this.ButtonMySort);
             this.Controls.Add(this.ButtonquickSort);
             this.Controls.Add(this.ButtonInsertSort);
             this.Controls.Add(this.ButtonSelectionSort);
@@ -207,6 +219,7 @@ namespace SortingVisualization
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Button ButtonMySort;
     }
 }
 

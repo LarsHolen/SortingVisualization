@@ -66,6 +66,7 @@ namespace SortingVisualization
             sortButtons.Add(ButtonSelectionSort);
             sortButtons.Add(ButtonInsertSort);
             sortButtons.Add(ButtonquickSort);
+            sortButtons.Add(ButtonMySort);
             sortButtons.Add(ButtonFast);
             sortButtons.Add(ButtonReset);
             sortButtons.Add(ButtonSlower);
@@ -134,6 +135,12 @@ namespace SortingVisualization
                     algorithm = AlgorithmsEnum.None;
                     // Running the sort at diffetent thread. pictureBox will update during sorting.
                     Task.Factory.StartNew(() => Algorithms.QuickSort(intArray, 0, intArray.Length-1, sleep, cancellationToken), cancellationToken);
+                    break;
+                case AlgorithmsEnum.MySort:
+                    // Clearing out selected, so we dont run multiple tasks at once.
+                    algorithm = AlgorithmsEnum.None;
+                    // Running the sort at diffetent thread. pictureBox will update during sorting.
+                    Task.Factory.StartNew(() => Algorithms.MySort(intArray, sleep, cancellationToken), cancellationToken);
                     break;
 
                 default:
@@ -232,6 +239,12 @@ namespace SortingVisualization
             algorithm = AlgorithmsEnum.QuickSort;
             FreezeSelectionButtons();
         }
+        private void ButtonMySort_Click(object sender, EventArgs e)
+        {
+            SetCancellation();
+            algorithm = AlgorithmsEnum.MySort;
+            FreezeSelectionButtons();
+        }
 
         #endregion
 
@@ -272,5 +285,7 @@ namespace SortingVisualization
             radioButton1.Checked = false;
             radioButton2.Checked = true;
         }
+
+       
     }
 }
