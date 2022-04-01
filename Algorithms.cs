@@ -25,7 +25,7 @@ namespace SortingVisualization
                 // Slowing it down for the visualization
                 Thread.Sleep(sleep);
                 swapped = false;
-                for (int i = 1; i < n-1; i++)
+                for (int i = 1; i < n; i++)
                 {
                     // Test is the sort is canceled and we must stop it
                     if (CancelCheck(ct)) return;
@@ -120,7 +120,6 @@ namespace SortingVisualization
                 if (i <= j)
                 {
                     (data[i], data[j]) = (data[j], data[i]);
-                    //exchange(data, i, j);
                     i++;
                     j--;
                 }
