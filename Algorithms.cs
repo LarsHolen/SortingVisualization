@@ -66,7 +66,7 @@ namespace SortingVisualization
                 }
                 (intArray[smallestIndex], intArray[i]) = (intArray[i], intArray[smallestIndex]);
             }
-            Debug.WriteLine("SelectionSort Iterations: " + iterations);
+            SortFinished.Invoke(null, EventArgs.Empty);
         }
         
         /// <summary>
@@ -92,6 +92,7 @@ namespace SortingVisualization
                     j--;
                 }
             }
+            SortFinished.Invoke(null, EventArgs.Empty);
         }
 
         /// <summary>
@@ -130,18 +131,11 @@ namespace SortingVisualization
                 QuickSort(data, l, j, sleep, ct);
             if (i < r)
                 QuickSort(data, i, r, sleep, ct);
+            if (l == 0 && r == data.Length - 1) SortFinished.Invoke(null, EventArgs.Empty);
         }
 
        
 
-        public static void exchange(int[] data, int m, int n)
-        {
-            int temporary;
-
-            temporary = data[m];
-            data[m] = data[n];
-            data[n] = temporary;
-        }
 
         /// <summary>
         /// Stop search!

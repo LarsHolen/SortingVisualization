@@ -14,11 +14,11 @@ namespace SortingVisualization
     public class DrawIntArray
     {
         private int[] intArray;
-        private PictureBox pictureBox;
-        private Bitmap bitmap;
+        private readonly PictureBox pictureBox;
+        private readonly Bitmap bitmap;
         private Graphics gfxObj;
 
-        private Pen blackPen = new Pen(Color.Black, 1);
+        private readonly Pen blackPen = new(Color.Black, 1);
 
         public bool DrawLine { get; set; }
 

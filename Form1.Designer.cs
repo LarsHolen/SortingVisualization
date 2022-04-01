@@ -32,9 +32,9 @@ namespace SortingVisualization
             this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ButtonBubbleSort = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.ButtonFast = new System.Windows.Forms.Button();
+            this.ButtonReset = new System.Windows.Forms.Button();
+            this.ButtonSlower = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.buttonRandomize = new System.Windows.Forms.Button();
             this.ButtonSelectionSort = new System.Windows.Forms.Button();
@@ -65,35 +65,35 @@ namespace SortingVisualization
             this.ButtonBubbleSort.UseVisualStyleBackColor = true;
             this.ButtonBubbleSort.Click += new System.EventHandler(this.ButtonBubbleSort_Click);
             // 
-            // button2
+            // ButtonFast
             // 
-            this.button2.Location = new System.Drawing.Point(239, 12);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(90, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Faster(-10 ms)";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.ButtonFast_Click);
+            this.ButtonFast.Location = new System.Drawing.Point(239, 12);
+            this.ButtonFast.Name = "ButtonFast";
+            this.ButtonFast.Size = new System.Drawing.Size(90, 23);
+            this.ButtonFast.TabIndex = 2;
+            this.ButtonFast.Text = "Faster(-10 ms)";
+            this.ButtonFast.UseVisualStyleBackColor = true;
+            this.ButtonFast.Click += new System.EventHandler(this.ButtonFast_Click);
             // 
-            // button3
+            // ButtonReset
             // 
-            this.button3.Location = new System.Drawing.Point(239, 41);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(90, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Reset (25ms)";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.ButtonMedium_Click);
+            this.ButtonReset.Location = new System.Drawing.Point(239, 41);
+            this.ButtonReset.Name = "ButtonReset";
+            this.ButtonReset.Size = new System.Drawing.Size(90, 23);
+            this.ButtonReset.TabIndex = 2;
+            this.ButtonReset.Text = "Reset (25ms)";
+            this.ButtonReset.UseVisualStyleBackColor = true;
+            this.ButtonReset.Click += new System.EventHandler(this.ButtonMedium_Click);
             // 
-            // button4
+            // ButtonSlower
             // 
-            this.button4.Location = new System.Drawing.Point(239, 70);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 23);
-            this.button4.TabIndex = 2;
-            this.button4.Text = "Slower(+10ms)";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.ButtonSlow_Click);
+            this.ButtonSlower.Location = new System.Drawing.Point(239, 70);
+            this.ButtonSlower.Name = "ButtonSlower";
+            this.ButtonSlower.Size = new System.Drawing.Size(90, 23);
+            this.ButtonSlower.TabIndex = 2;
+            this.ButtonSlower.Text = "Slower(+10ms)";
+            this.ButtonSlower.UseVisualStyleBackColor = true;
+            this.ButtonSlower.Click += new System.EventHandler(this.ButtonSlow_Click);
             // 
             // textBox1
             // 
@@ -175,9 +175,9 @@ namespace SortingVisualization
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.buttonRandomize);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ButtonSlower);
+            this.Controls.Add(this.ButtonReset);
+            this.Controls.Add(this.ButtonFast);
             this.Controls.Add(this.ButtonquickSort);
             this.Controls.Add(this.ButtonInsertSort);
             this.Controls.Add(this.ButtonSelectionSort);
@@ -196,9 +196,9 @@ namespace SortingVisualization
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button ButtonBubbleSort;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button ButtonFast;
+        private System.Windows.Forms.Button ButtonReset;
+        private System.Windows.Forms.Button ButtonSlower;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button buttonRandomize;
         private System.Windows.Forms.Button ButtonSelectionSort;

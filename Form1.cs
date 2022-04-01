@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -9,20 +10,31 @@ namespace SortingVisualization
 {
     public partial class Form1 : Form
     {
-
+        // The obj that take care of drawing the bitmap/pictureBox
         private DrawIntArray drawIntArray;
+        // The array that will be sorted
         private int[] intArray;
+        // the delay in the sort algogithms, to slow them down for visualization
         private int sleep = 20;
 
+        // Stuff needed to be able to cancle sorts while they run, since they
+        // run on another thread.
         System.Threading.CancellationTokenSource cancellationTokenSource;
         System.Threading.CancellationToken cancellationToken;
 
-        List<Button> sortButtons = new();
+        // A list of buttons, that I disable/enable during sorting
+        readonly List<Button> sortButtons = new();
 
+        // Enum with the current selected algorithm
         AlgorithmsEnum algorithm = AlgorithmsEnum.None;
 
-        private static Timer timer;
+        // The timer object that got the timer event for drawing 
+        private static System.Windows.Forms.Timer timer;
 
+
+        /// <summary>
+        /// Constructor.  Does some init's
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -54,6 +66,10 @@ namespace SortingVisualization
             sortButtons.Add(ButtonSelectionSort);
             sortButtons.Add(ButtonInsertSort);
             sortButtons.Add(ButtonquickSort);
+            sortButtons.Add(ButtonFast);
+            sortButtons.Add(ButtonReset);
+            sortButtons.Add(ButtonSlower);
+
         }
 
         /// <summary>
@@ -67,6 +83,8 @@ namespace SortingVisualization
             this.Invoke(new MethodInvoker(delegate
             {
                 UnFreezeSelectionButtons();
+                Thread.Sleep(1000);
+                intArray = InitIntArray(pictureBox1);
             }));
         }
 
@@ -127,7 +145,7 @@ namespace SortingVisualization
 
 
 
-        #region Speed buttons:
+
         /// <summary>
         /// Button events for changing the speed algorithms
         /// </summary>
@@ -151,7 +169,7 @@ namespace SortingVisualization
             sleep += 10;
             textBox1.Text = sleep.ToString() + " ms";
         }
-        #endregion
+      
 
         /// <summary>
         /// Making an int[] with length of PictureBox width, and values random 0 to 
