@@ -31,10 +31,14 @@ namespace SortingVisualization
         public DrawIntArray(PictureBox pb, int[] iA )
         {
             DrawLine = true;
+            if (Screen.PrimaryScreen.Bounds.Width > 1600) blackPen.Width = 1;
+            if (Screen.PrimaryScreen.Bounds.Width > 2200) blackPen.Width = 2;
+            if (Screen.PrimaryScreen.Bounds.Width >= 2800) blackPen.Width = 3;
+
             intArray = iA;
             pictureBox = pb;
             if (intArray.Length > pictureBox.Width) pictureBox.Width = intArray.Length;
-            if (GetMaxValue() > pictureBox.Height) pictureBox.Height = GetMaxValue();
+            if (GetMaxValue() > pictureBox.Height) pictureBox.Height= GetMaxValue();
 
             bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
         }
@@ -61,8 +65,10 @@ namespace SortingVisualization
                 if (intArray[i] > pictureBox.Height) continue;
                 //Debug.WriteLine(Math.Abs(intArray[i] - pictureBox.Height));
                 int y = Math.Abs(intArray[i] - pictureBox.Height) ;
-                if(!DrawLine) bitmap.SetPixel(i, y-1, Color.Black);
-                if(DrawLine) gfxObj.DrawLine(blackPen, new Point(i, pictureBox.Height), new Point(i, y - 1));
+                //if(!DrawLine) bitmap.SetPixel(i, y-1, Color.Black);
+                if (!DrawLine) gfxObj.DrawEllipse(blackPen, i, y - 1, blackPen.Width, blackPen.Width);
+                //if (!DrawLine) gfxObj.DrawLine(blackPen, new Point(i, y - 1), new Point(i, y + 1));
+                if (DrawLine) gfxObj.DrawLine(blackPen, new Point(i, pictureBox.Height), new Point(i, y - 1));
                 
             }
 

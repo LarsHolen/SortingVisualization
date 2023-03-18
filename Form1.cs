@@ -67,6 +67,7 @@ namespace SortingVisualization
             sortButtons.Add(ButtonInsertSort);
             sortButtons.Add(ButtonquickSort);
             sortButtons.Add(ButtonMySort);
+            sortButtons.Add(ButtonMySort2);
             sortButtons.Add(ButtonFast);
             sortButtons.Add(ButtonReset);
             sortButtons.Add(ButtonSlower);
@@ -114,8 +115,8 @@ namespace SortingVisualization
                     // Clearing out selected, so we dont run multiple tasks at once.
                     algorithm = AlgorithmsEnum.None;
                     // Running the sort at diffetent thread. pictureBox will update during sorting.
-                    Task.Factory.StartNew(() =>Algorithms.BubbleSort(intArray, sleep, cancellationToken), cancellationToken);
-                    
+                    Task.Factory.StartNew(() => Algorithms.BubbleSort(intArray, sleep, cancellationToken), cancellationToken);
+
                     break;
                 case AlgorithmsEnum.SelectionSort:
                     // Clearing out selected, so we dont run multiple tasks at once.
@@ -123,7 +124,7 @@ namespace SortingVisualization
                     // Running the sort at diffetent thread. pictureBox will update during sorting.
                     Task.Factory.StartNew(() => Algorithms.SelectionSort(intArray, sleep, cancellationToken), cancellationToken);
                     break;
-               
+
                 case AlgorithmsEnum.InsertionSort:
                     // Clearing out selected, so we dont run multiple tasks at once.
                     algorithm = AlgorithmsEnum.None;
@@ -134,13 +135,19 @@ namespace SortingVisualization
                     // Clearing out selected, so we dont run multiple tasks at once.
                     algorithm = AlgorithmsEnum.None;
                     // Running the sort at diffetent thread. pictureBox will update during sorting.
-                    Task.Factory.StartNew(() => Algorithms.QuickSort(intArray, 0, intArray.Length-1, sleep, cancellationToken), cancellationToken);
+                    Task.Factory.StartNew(() => Algorithms.QuickSort(intArray, 0, intArray.Length - 1, sleep, cancellationToken), cancellationToken);
                     break;
                 case AlgorithmsEnum.MySort:
                     // Clearing out selected, so we dont run multiple tasks at once.
                     algorithm = AlgorithmsEnum.None;
                     // Running the sort at diffetent thread. pictureBox will update during sorting.
                     Task.Factory.StartNew(() => Algorithms.MySort(intArray, sleep, cancellationToken), cancellationToken);
+                    break;
+                case AlgorithmsEnum.MySort2:
+                    // Clearing out selected, so we dont run multiple tasks at once.
+                    algorithm = AlgorithmsEnum.None;
+                    // Running the sort at diffetent thread. pictureBox will update during sorting.
+                    Task.Factory.StartNew(() => Algorithms.MySort2(intArray, sleep, cancellationToken), cancellationToken);
                     break;
 
                 default:
@@ -160,7 +167,7 @@ namespace SortingVisualization
         /// <param name="e"></param>
         private void ButtonFast_Click(object sender, EventArgs e)
         {
-            sleep-= 10;
+            sleep -= 10;
             if (sleep < 0) sleep = 0;
             textBox1.Text = sleep.ToString() + " ms";
         }
@@ -176,7 +183,7 @@ namespace SortingVisualization
             sleep += 10;
             textBox1.Text = sleep.ToString() + " ms";
         }
-      
+
 
         /// <summary>
         /// Making an int[] with length of PictureBox width, and values random 0 to 
@@ -245,6 +252,12 @@ namespace SortingVisualization
             algorithm = AlgorithmsEnum.MySort;
             FreezeSelectionButtons();
         }
+        private void ButtonMySort2_Click(object sender, EventArgs e)
+        {
+            SetCancellation();
+            algorithm = AlgorithmsEnum.MySort2;
+            FreezeSelectionButtons();
+        }
 
         #endregion
 
@@ -266,7 +279,7 @@ namespace SortingVisualization
             }
         }
 
-       
+
         /// <summary>
         /// Radio Buttons for drawin lines or points
         /// </summary>
@@ -285,7 +298,5 @@ namespace SortingVisualization
             radioButton1.Checked = false;
             radioButton2.Checked = true;
         }
-
-       
     }
 }

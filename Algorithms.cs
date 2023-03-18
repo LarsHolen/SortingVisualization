@@ -200,6 +200,44 @@ namespace SortingVisualization
         }
 
 
+        internal static void MySort2(int[] intArray, int sleep, CancellationToken ct)
+        {
+            int max = intArray[0];
+            int min = intArray[0];
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                if (CancelCheck(ct)) return;
+                if (max < intArray[i]) max = intArray[i];
+                if (min > intArray[i]) min = intArray[i];
+            }
+
+            int[] countArray = new int[max - min + 1];
+            for (int i = 0; i < intArray.Length; i++)
+            {
+                if (CancelCheck(ct)) return;
+                countArray[intArray[i] - min]++;
+            }
+
+            int index = 0;
+            for (int i = 0; i < countArray.Length; i++)
+            {
+                if (CancelCheck(ct)) return;
+                Thread.Sleep(sleep);
+                for (int j = 0; j < countArray[i]; j++)
+                {
+                    intArray[index] = i + min;
+                    index++;
+                }
+            }
+
+            // Sleeping a little, so we finish drawing it
+            Thread.Sleep(500);
+            SortFinished.Invoke(null, EventArgs.Empty);
+        }
+
+
+
+
         /// <summary>
         /// Stop search!
         /// </summary>

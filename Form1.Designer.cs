@@ -29,179 +29,205 @@ namespace SortingVisualization
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.ButtonBubbleSort = new System.Windows.Forms.Button();
-            this.ButtonFast = new System.Windows.Forms.Button();
-            this.ButtonReset = new System.Windows.Forms.Button();
-            this.ButtonSlower = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.buttonRandomize = new System.Windows.Forms.Button();
-            this.ButtonSelectionSort = new System.Windows.Forms.Button();
-            this.ButtonInsertSort = new System.Windows.Forms.Button();
-            this.ButtonquickSort = new System.Windows.Forms.Button();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.ButtonMySort = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            pictureBox1 = new System.Windows.Forms.PictureBox();
+            ButtonBubbleSort = new System.Windows.Forms.Button();
+            ButtonFast = new System.Windows.Forms.Button();
+            ButtonReset = new System.Windows.Forms.Button();
+            ButtonSlower = new System.Windows.Forms.Button();
+            textBox1 = new System.Windows.Forms.TextBox();
+            buttonRandomize = new System.Windows.Forms.Button();
+            ButtonSelectionSort = new System.Windows.Forms.Button();
+            ButtonInsertSort = new System.Windows.Forms.Button();
+            ButtonquickSort = new System.Windows.Forms.Button();
+            bindingSource1 = new System.Windows.Forms.BindingSource(components);
+            radioButton1 = new System.Windows.Forms.RadioButton();
+            radioButton2 = new System.Windows.Forms.RadioButton();
+            ButtonMySort = new System.Windows.Forms.Button();
+            ButtonMySort2 = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            SuspendLayout();
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(347, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(400, 400);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Location = new System.Drawing.Point(644, 26);
+            pictureBox1.Margin = new System.Windows.Forms.Padding(6);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(743, 853);
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
             // 
             // ButtonBubbleSort
             // 
-            this.ButtonBubbleSort.Location = new System.Drawing.Point(13, 12);
-            this.ButtonBubbleSort.Name = "ButtonBubbleSort";
-            this.ButtonBubbleSort.Size = new System.Drawing.Size(134, 23);
-            this.ButtonBubbleSort.TabIndex = 1;
-            this.ButtonBubbleSort.Text = "BubbleSort";
-            this.ButtonBubbleSort.UseVisualStyleBackColor = true;
-            this.ButtonBubbleSort.Click += new System.EventHandler(this.ButtonBubbleSort_Click);
+            ButtonBubbleSort.Location = new System.Drawing.Point(24, 26);
+            ButtonBubbleSort.Margin = new System.Windows.Forms.Padding(6);
+            ButtonBubbleSort.Name = "ButtonBubbleSort";
+            ButtonBubbleSort.Size = new System.Drawing.Size(249, 49);
+            ButtonBubbleSort.TabIndex = 1;
+            ButtonBubbleSort.Text = "BubbleSort";
+            ButtonBubbleSort.UseVisualStyleBackColor = true;
+            ButtonBubbleSort.Click += ButtonBubbleSort_Click;
             // 
             // ButtonFast
             // 
-            this.ButtonFast.Location = new System.Drawing.Point(239, 12);
-            this.ButtonFast.Name = "ButtonFast";
-            this.ButtonFast.Size = new System.Drawing.Size(90, 23);
-            this.ButtonFast.TabIndex = 2;
-            this.ButtonFast.Text = "Faster(-10 ms)";
-            this.ButtonFast.UseVisualStyleBackColor = true;
-            this.ButtonFast.Click += new System.EventHandler(this.ButtonFast_Click);
+            ButtonFast.Location = new System.Drawing.Point(444, 26);
+            ButtonFast.Margin = new System.Windows.Forms.Padding(6);
+            ButtonFast.Name = "ButtonFast";
+            ButtonFast.Size = new System.Drawing.Size(167, 49);
+            ButtonFast.TabIndex = 2;
+            ButtonFast.Text = "Faster(-10 ms)";
+            ButtonFast.UseVisualStyleBackColor = true;
+            ButtonFast.Click += ButtonFast_Click;
             // 
             // ButtonReset
             // 
-            this.ButtonReset.Location = new System.Drawing.Point(239, 41);
-            this.ButtonReset.Name = "ButtonReset";
-            this.ButtonReset.Size = new System.Drawing.Size(90, 23);
-            this.ButtonReset.TabIndex = 2;
-            this.ButtonReset.Text = "Reset (25ms)";
-            this.ButtonReset.UseVisualStyleBackColor = true;
-            this.ButtonReset.Click += new System.EventHandler(this.ButtonMedium_Click);
+            ButtonReset.Location = new System.Drawing.Point(444, 87);
+            ButtonReset.Margin = new System.Windows.Forms.Padding(6);
+            ButtonReset.Name = "ButtonReset";
+            ButtonReset.Size = new System.Drawing.Size(167, 49);
+            ButtonReset.TabIndex = 2;
+            ButtonReset.Text = "Reset (25ms)";
+            ButtonReset.UseVisualStyleBackColor = true;
+            ButtonReset.Click += ButtonMedium_Click;
             // 
             // ButtonSlower
             // 
-            this.ButtonSlower.Location = new System.Drawing.Point(239, 70);
-            this.ButtonSlower.Name = "ButtonSlower";
-            this.ButtonSlower.Size = new System.Drawing.Size(90, 23);
-            this.ButtonSlower.TabIndex = 2;
-            this.ButtonSlower.Text = "Slower(+10ms)";
-            this.ButtonSlower.UseVisualStyleBackColor = true;
-            this.ButtonSlower.Click += new System.EventHandler(this.ButtonSlow_Click);
+            ButtonSlower.Location = new System.Drawing.Point(444, 149);
+            ButtonSlower.Margin = new System.Windows.Forms.Padding(6);
+            ButtonSlower.Name = "ButtonSlower";
+            ButtonSlower.Size = new System.Drawing.Size(167, 49);
+            ButtonSlower.TabIndex = 2;
+            ButtonSlower.Text = "Slower(+10ms)";
+            ButtonSlower.UseVisualStyleBackColor = true;
+            ButtonSlower.Click += ButtonSlow_Click;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(239, 100);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(90, 23);
-            this.textBox1.TabIndex = 3;
+            textBox1.Location = new System.Drawing.Point(444, 213);
+            textBox1.Margin = new System.Windows.Forms.Padding(6);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new System.Drawing.Size(164, 39);
+            textBox1.TabIndex = 3;
             // 
             // buttonRandomize
             // 
-            this.buttonRandomize.Location = new System.Drawing.Point(13, 388);
-            this.buttonRandomize.Name = "buttonRandomize";
-            this.buttonRandomize.Size = new System.Drawing.Size(75, 23);
-            this.buttonRandomize.TabIndex = 4;
-            this.buttonRandomize.Text = "Restart";
-            this.buttonRandomize.UseVisualStyleBackColor = true;
-            this.buttonRandomize.Click += new System.EventHandler(this.ButtonRandomize_Click);
+            buttonRandomize.Location = new System.Drawing.Point(24, 828);
+            buttonRandomize.Margin = new System.Windows.Forms.Padding(6);
+            buttonRandomize.Name = "buttonRandomize";
+            buttonRandomize.Size = new System.Drawing.Size(139, 49);
+            buttonRandomize.TabIndex = 4;
+            buttonRandomize.Text = "Restart";
+            buttonRandomize.UseVisualStyleBackColor = true;
+            buttonRandomize.Click += ButtonRandomize_Click;
             // 
             // ButtonSelectionSort
             // 
-            this.ButtonSelectionSort.Location = new System.Drawing.Point(13, 41);
-            this.ButtonSelectionSort.Name = "ButtonSelectionSort";
-            this.ButtonSelectionSort.Size = new System.Drawing.Size(134, 23);
-            this.ButtonSelectionSort.TabIndex = 1;
-            this.ButtonSelectionSort.Text = "SelectionSort";
-            this.ButtonSelectionSort.UseVisualStyleBackColor = true;
-            this.ButtonSelectionSort.Click += new System.EventHandler(this.ButtonSelectionSort_Click);
+            ButtonSelectionSort.Location = new System.Drawing.Point(24, 87);
+            ButtonSelectionSort.Margin = new System.Windows.Forms.Padding(6);
+            ButtonSelectionSort.Name = "ButtonSelectionSort";
+            ButtonSelectionSort.Size = new System.Drawing.Size(249, 49);
+            ButtonSelectionSort.TabIndex = 1;
+            ButtonSelectionSort.Text = "SelectionSort";
+            ButtonSelectionSort.UseVisualStyleBackColor = true;
+            ButtonSelectionSort.Click += ButtonSelectionSort_Click;
             // 
             // ButtonInsertSort
             // 
-            this.ButtonInsertSort.Location = new System.Drawing.Point(13, 70);
-            this.ButtonInsertSort.Name = "ButtonInsertSort";
-            this.ButtonInsertSort.Size = new System.Drawing.Size(134, 23);
-            this.ButtonInsertSort.TabIndex = 1;
-            this.ButtonInsertSort.Text = "InsertSort";
-            this.ButtonInsertSort.UseVisualStyleBackColor = true;
-            this.ButtonInsertSort.Click += new System.EventHandler(this.ButtonInsertSort_Click);
+            ButtonInsertSort.Location = new System.Drawing.Point(24, 149);
+            ButtonInsertSort.Margin = new System.Windows.Forms.Padding(6);
+            ButtonInsertSort.Name = "ButtonInsertSort";
+            ButtonInsertSort.Size = new System.Drawing.Size(249, 49);
+            ButtonInsertSort.TabIndex = 1;
+            ButtonInsertSort.Text = "InsertSort";
+            ButtonInsertSort.UseVisualStyleBackColor = true;
+            ButtonInsertSort.Click += ButtonInsertSort_Click;
             // 
             // ButtonquickSort
             // 
-            this.ButtonquickSort.Location = new System.Drawing.Point(12, 99);
-            this.ButtonquickSort.Name = "ButtonquickSort";
-            this.ButtonquickSort.Size = new System.Drawing.Size(134, 23);
-            this.ButtonquickSort.TabIndex = 1;
-            this.ButtonquickSort.Text = "QuickSort";
-            this.ButtonquickSort.UseVisualStyleBackColor = true;
-            this.ButtonquickSort.Click += new System.EventHandler(this.ButtonQuickSort_Click);
+            ButtonquickSort.Location = new System.Drawing.Point(22, 211);
+            ButtonquickSort.Margin = new System.Windows.Forms.Padding(6);
+            ButtonquickSort.Name = "ButtonquickSort";
+            ButtonquickSort.Size = new System.Drawing.Size(249, 49);
+            ButtonquickSort.TabIndex = 1;
+            ButtonquickSort.Text = "QuickSort";
+            ButtonquickSort.UseVisualStyleBackColor = true;
+            ButtonquickSort.Click += ButtonQuickSort_Click;
             // 
             // radioButton1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(234, 130);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(79, 19);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Draw lines";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            this.radioButton1.Click += new System.EventHandler(this.RadioButtonDrawLines_Click);
+            radioButton1.AutoSize = true;
+            radioButton1.Checked = true;
+            radioButton1.Location = new System.Drawing.Point(435, 277);
+            radioButton1.Margin = new System.Windows.Forms.Padding(6);
+            radioButton1.Name = "radioButton1";
+            radioButton1.Size = new System.Drawing.Size(155, 36);
+            radioButton1.TabIndex = 5;
+            radioButton1.TabStop = true;
+            radioButton1.Text = "Draw lines";
+            radioButton1.UseVisualStyleBackColor = true;
+            radioButton1.Click += RadioButtonDrawLines_Click;
             // 
             // radioButton2
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(234, 155);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(88, 19);
-            this.radioButton2.TabIndex = 6;
-            this.radioButton2.Text = "Draw points";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            this.radioButton2.Click += new System.EventHandler(this.RadioButtonDrawPoints_Click);
+            radioButton2.AutoSize = true;
+            radioButton2.Location = new System.Drawing.Point(435, 331);
+            radioButton2.Margin = new System.Windows.Forms.Padding(6);
+            radioButton2.Name = "radioButton2";
+            radioButton2.Size = new System.Drawing.Size(172, 36);
+            radioButton2.TabIndex = 6;
+            radioButton2.Text = "Draw points";
+            radioButton2.UseVisualStyleBackColor = true;
+            radioButton2.Click += RadioButtonDrawPoints_Click;
             // 
             // ButtonMySort
             // 
-            this.ButtonMySort.Location = new System.Drawing.Point(12, 126);
-            this.ButtonMySort.Name = "ButtonMySort";
-            this.ButtonMySort.Size = new System.Drawing.Size(134, 23);
-            this.ButtonMySort.TabIndex = 1;
-            this.ButtonMySort.Text = "MySort";
-            this.ButtonMySort.UseVisualStyleBackColor = true;
-            this.ButtonMySort.Click += new System.EventHandler(this.ButtonMySort_Click);
+            ButtonMySort.Location = new System.Drawing.Point(22, 269);
+            ButtonMySort.Margin = new System.Windows.Forms.Padding(6);
+            ButtonMySort.Name = "ButtonMySort";
+            ButtonMySort.Size = new System.Drawing.Size(249, 49);
+            ButtonMySort.TabIndex = 1;
+            ButtonMySort.Text = "MySort";
+            ButtonMySort.UseVisualStyleBackColor = true;
+            ButtonMySort.Click += ButtonMySort_Click;
+            // 
+            // ButtonMySort2
+            // 
+            ButtonMySort2.Location = new System.Drawing.Point(22, 331);
+            ButtonMySort2.Margin = new System.Windows.Forms.Padding(6);
+            ButtonMySort2.Name = "ButtonMySort2";
+            ButtonMySort2.Size = new System.Drawing.Size(249, 49);
+            ButtonMySort2.TabIndex = 7;
+            ButtonMySort2.Text = "MySort2";
+            ButtonMySort2.UseVisualStyleBackColor = true;
+            ButtonMySort2.Click += ButtonMySort2_Click;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.radioButton2);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.buttonRandomize);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.ButtonSlower);
-            this.Controls.Add(this.ButtonReset);
-            this.Controls.Add(this.ButtonFast);
-            this.Controls.Add(this.ButtonMySort);
-            this.Controls.Add(this.ButtonquickSort);
-            this.Controls.Add(this.ButtonInsertSort);
-            this.Controls.Add(this.ButtonSelectionSort);
-            this.Controls.Add(this.ButtonBubbleSort);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(1486, 960);
+            Controls.Add(ButtonMySort2);
+            Controls.Add(radioButton2);
+            Controls.Add(radioButton1);
+            Controls.Add(buttonRandomize);
+            Controls.Add(textBox1);
+            Controls.Add(ButtonSlower);
+            Controls.Add(ButtonReset);
+            Controls.Add(ButtonFast);
+            Controls.Add(ButtonMySort);
+            Controls.Add(ButtonquickSort);
+            Controls.Add(ButtonInsertSort);
+            Controls.Add(ButtonSelectionSort);
+            Controls.Add(ButtonBubbleSort);
+            Controls.Add(pictureBox1);
+            Margin = new System.Windows.Forms.Padding(6);
+            Name = "Form1";
+            Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -220,6 +246,7 @@ namespace SortingVisualization
         private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.Button ButtonMySort;
+        private System.Windows.Forms.Button ButtonMySort2;
     }
 }
 
